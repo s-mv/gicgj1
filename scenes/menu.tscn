@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://q85h8t3vamht"]
+
+[ext_resource type="Texture2D" uid="uid://cfiv38mcvq03t" path="res://img/title.png" id="1_lti8b"]
+[ext_resource type="Script" uid="uid://cchv8ko2ukl3o" path="res://src/title.gd" id="2_ouk20"]
+[ext_resource type="AudioStream" uid="uid://d0h7juwtnhxna" path="res://sfx/title.ogg" id="3_mae5d"]
+[ext_resource type="FontFile" uid="uid://bred48ou8rlvv" path="res://misc/PixelifySans-Regular.ttf" id="3_mhnvy"]
+[ext_resource type="Texture2D" uid="uid://r8o3jf6171pf" path="res://img/enemy.png" id="5_4ytvr"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("2_ouk20")
+
+[node name="Enemy" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("5_4ytvr")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(640, -100)
+texture = ExtResource("1_lti8b")
+
+[node name="ClickToPlay" type="Label" parent="."]
+offset_left = 535.0
+offset_top = 680.0
+offset_right = 745.0
+offset_bottom = 720.0
+pivot_offset = Vector2(105, 20)
+theme_override_fonts/font = ExtResource("3_mhnvy")
+theme_override_font_sizes/font_size = 32
+text = "CLICK TO PLAY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_mae5d")
+autoplay = true
+parameters/looping = false
